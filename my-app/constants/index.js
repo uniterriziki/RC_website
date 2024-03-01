@@ -1,7 +1,7 @@
 //use these in the component Navbar.jsx
 export const NavLinks = [
   { href: "/", key: "Home", text: "Home" },
-  { href: "/", key: "Posts", text: "Posts" },
+  { href: "/", key: "Articles", text: "Articles" },
   { href: "/", key: "About Us", text: "About Us" },
   { href: "/", key: "Contact Us", text: "Contact Us" },
   { href: "/", key: "Sign Up", text: "Sign Up" },

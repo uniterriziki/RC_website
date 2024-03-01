@@ -1,7 +1,19 @@
+import Image from "next/image";
 import React from "react";
 
 function Carousel() {
-  return <div>Carousel</div>;
+  return (
+    <p>a</p>
+    // <div className="grid place-items-center grid-cols-2 w-full mx-auto max-w-5xl shadow-2xl rounded-2xl">
+    //   <div className="w-full flex justify-center items-center gap-4 transition-transform ease-in-out duration-500 rounded-2xl">
+    //     {images.map((pic, id)=>(
+    //         <div key={id}>
+    //             <Image src={} alt="" width={400} height={400} className="w-full h-full object-cover rounded-tl-3xl rounded-bl-3xl"/>
+    //             </div>
+    //     ))}
+    //   </div>
+    // </div>
+  );
 }
 
 export default Carousel;

@@ -18,3 +18,19 @@ export const footerLinks = [
     links: ["Ex Footer link 1", "Ex Footer Link 1"],
   },
 ];
+
+//use these in the Carousel.jsx and CarouselDescription.jsx
+export const images = [
+  {
+    id: 1,
+    src: "/image.png",
+    title: "Article 1",
+    desc: "First article 1",
+  },
+  {
+    id: 2,
+    src: "/image.png",
+    title: "Article 2",
+    desc: "Second article 2",
+  },
+];

@@ -1,16 +1,13 @@
 //THIS WILL BE THE HOMEPAGE OF THE APP
 
-
 import Image from "next/image";
 import Link from "next/link";
-import 'tailwindcss/tailwind.css';
+import "tailwindcss/tailwind.css";
 
 export default function Home() {
   return (
     <main>
-      <h1>This is my stooooory</h1>
-      <Link href={"/posts/first-post"}>first-post</Link>
+      <h1 className="font-bold">Carousel Here</h1>
     </main>
-
   );
 }

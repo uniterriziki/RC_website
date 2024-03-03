@@ -35,14 +35,14 @@ const CarouselDescription = ({ clickNext, clickPrev, activeImgIndex }) => {
               onClick={clickPrev}
               className="absolute bottom-2 right-10 cursor-pointer"
             >
-              <Image src={left.svg} alt="" width={20} height={20}></Image>
+              {/* <Image src={left.svg} alt="" width={20} height={20}></Image> */}
             </div>
             {/* To scroll next left */}
             <div
               onClick={clickNext}
               className="absolute bottom-2 right-2 cursor-pointer"
             >
-              <Image src={left.svg} alt="" width={20} height={20}></Image>
+              {/* <Image src={left.svg} alt="" width={20} height={20}></Image> */}
             </div>
           </div>
         </div>

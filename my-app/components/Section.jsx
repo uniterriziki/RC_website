@@ -10,7 +10,7 @@ export default function Section() {
 
       <div className="border-red-600 grid md:grid-cols-2 ">
         <div>
-          <Image />
+          {/* <Image /> */}
         </div>
         <div>
           <CarouselDescription />

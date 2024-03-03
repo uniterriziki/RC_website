@@ -1,10 +1,11 @@
 //use these in the component Navbar.jsx
 export const NavLinks = [
   { href: "/", key: "Home", text: "Home" },
-  { href: "/", key: "Articles", text: "Articles" },
+  { href: "/articles", key: "Articles", text: "Articles" },
   { href: "/about", key: "About Us", text: "About Us" },
-  { href: "/", key: "Contact Us", text: "Contact Us" },
-  { href: "/", key: "Sign Up", text: "Sign Up" },
+  { href: "/contact", key: "Contact Us", text: "Contact Us" },
+  { href: "/signup", key: "Sign Up", text: "Sign Up" },
+  // { href: "/create-article", key: "Create Article", text: "Create Article" },
 ];
 
 //use these in the component Footer.jsx

@@ -36,7 +36,7 @@ const Navbar = async () => {
         {/* {session?.user ? (
           <>
           <ProfileMenu session={session}/> */}
-        <Link href="/create-project">Create An Article</Link>
+        <Link href="/create-article">Create An Article</Link>
         {/* </>
         ) : (
           <AuthProviders />

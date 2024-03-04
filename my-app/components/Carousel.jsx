@@ -38,7 +38,7 @@ const Carousel = () => {
       <div className="w-full flex justify-center items-center gap-4 transition-transform ease-in-out duration-500 rounded-2xl">
         {images.map((pic, id) => (
           <div
-            classname={`${
+            className={`${
               id === activeImage
                 ? "block w-full h-[80vh] object-cover transition-all duration-500 ease-in-out"
                 : "hidden"

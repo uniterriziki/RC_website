@@ -1,10 +1,10 @@
-import { graph, config } from '@grafbase/sdk'
+import { graph, config } from "@grafbase/sdk";
 
 // Welcome to Grafbase!
 //
 // Configure authentication, data sources, resolvers and caching for your GraphQL API.
 
-const g = graph.Standalone()
+const g = graph.Standalone();
 
 // Data Sources - https://grafbase.com/docs/connectors
 //
@@ -26,7 +26,7 @@ export default config({
     // const oidc = auth.OpenIDConnect({ issuer: g.env('OIDC_ISSUER_URL') })
     // providers: [oidc],
     rules: (rules) => {
-      rules.public()
+      rules.public();
     },
   },
   // Caching - https://grafbase.com/docs/graphql-edge-caching
@@ -39,4 +39,4 @@ export default config({
   //     }
   //   ]
   // }
-})
+});

@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import ArticleForm from "../../../components/ArticleForm";
 
 const createArticle = () => {
-    return (
-        <div>create an article</div>
-    )
-}
+  return (
+    <div>
+      <ArticleForm />
+    </div>
+  );
+};
 
-export default createArticle
+export default createArticle;

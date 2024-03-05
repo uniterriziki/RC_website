@@ -26,19 +26,17 @@ const Footer = () => {
           </p>
         </div>
         <div className="flex flex-wrap gap-12">
-          <FooterColumn
-            title={footerLinks[0].title}
-            links={footerLinks[0].links}
-          />
+          <div className="flex flex-col gap-3">
+            <Link href={"/"} className=" h-fit px-2 rounded-lg hover:text-red-500 duration-500 hover:shadow-xl bg-indigo-200">Read an Article</Link>
+            <Link href={"/"} className=" h-fit px-2 rounded-lg hover:text-red-500 duration-500 hover:shadow-xl bg-indigo-200">Submit an Article</Link>
+          </div>
+
           <div className="flex-1 flex flex-col gap-4">
             <FooterColumn
               title={footerLinks[1].title}
               links={footerLinks[1].links}
             />
-            <FooterColumn
-              title={footerLinks[1].title}
-              links={footerLinks[1].links}
-            />
+
           </div>
           <FooterColumn
             title={footerLinks[1].title}
@@ -49,24 +47,14 @@ const Footer = () => {
               title={footerLinks[1].title}
               links={footerLinks[1].links}
             />
-            <FooterColumn
-              title={footerLinks[1].title}
-              links={footerLinks[1].links}
-            />
+
           </div>
-          <FooterColumn
-            title={footerLinks[1].title}
-            links={footerLinks[1].links}
-          />
         </div>
       </div>
 
-      <div className="flexBetween footer_copyright">
-        <p>@ 2024 RC-UON. All Rights Reserved</p>
-        <p className="text-gray">
-          <span className="text-black font-semibold">214</span>
-          members up to date
-        </p>
+      <div className=" flexBetween bg-indigo-300 footer_copyright">
+        <p className="text-center">@ 2024 RC-UON. All Rights Reserved</p>
+
       </div>
     </footer>
   );

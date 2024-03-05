@@ -23,14 +23,22 @@ export const footerLinks = [
 export const images = [
   {
     id: 1,
-    src: "/image.png",
+    src: "https://unsplash.com/photos/brown-tabby-kitten-sitting-on-floor-nKC772R_qog",
     title: "Article 1",
     desc: "First article 1",
   },
   {
     id: 2,
-    src: "/image.png",
+    src: "https://unsplash.com/photos/white-and-gray-kitten-on-white-textile-so5nsYDOdxw",
     title: "Article 2",
     desc: "Second article 2",
   },
+  {
+    id: 3,
+    src: "https://unsplash.com/photos/white-butterfly-resting-on-cats-nose-rW-I87aPY5Y",
+    title: "Article 3",
+    desc: "Second article 3",
+  },
 ];
+
+

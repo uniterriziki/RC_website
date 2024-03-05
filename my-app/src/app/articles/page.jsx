@@ -1,5 +1,8 @@
+import ArticleSection from "../../../components/ArticleSection";
 import Section from "../../../components/Section";
 
 export default function page() {
-  return <Section />;
+  return (
+  <div><ArticleSection /></div>
+  )
 }

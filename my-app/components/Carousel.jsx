@@ -35,11 +35,11 @@ const Carousel = () => {
 
   return (
     <div className="bg-indigo-400 p-2 grid place-items-center grid-cols-2 w-full mx-auto max-w-5xl shadow-2xl rounded-2xl">
-      <div className=" w-full flex justify-center items-center gap-4 transition-transform ease-in-out duration-500 rounded-2xl">
+      <div className=" w-full flex justify-center items-center gap-4 transition-transform ease-in-out duration-500 rounded-2xl ">
         {images.map((pic, idx) => (
           <div
             className={`${idx === activeImage
-              ? "block w-full h-[80vh] object-cover transition-all duration-500 ease-in-out"
+              ? "block w-full h-[80vh] object-cover transition-all duration-500 ease-in-out " 
               : "hidden"
               }`}
             key={idx}
@@ -49,7 +49,7 @@ const Carousel = () => {
               alt=""
               width={400}
               height={400}
-              className="w-full h-full object-cover rounded-tl-3xl rounded-bl-3xl"
+              className="w-full h-full object-cover rounded-tl-3xl rounded-bl-3xl hover:shadow-red-500 hover:shadow-2xl hover:cursor-pointer"
             />
           </div>
         ))}

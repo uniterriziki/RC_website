@@ -4,15 +4,14 @@ export const NavLinks = [
   { href: "/articles", key: "Articles", text: "Articles" },
   { href: "/about", key: "About Us", text: "About Us" },
   { href: "/contact", key: "Contact Us", text: "Contact Us" },
-  { href: "/signup", key: "Sign Up", text: "Sign Up" },
   // { href: "/create-article", key: "Create Article", text: "Create Article" },
 ];
 
 //use these in the component Footer.jsx
 export const footerLinks = [
   {
-    title: "Students",
-    links: ["Read an article", "Post an article"],
+    title: "",
+    links: ["Read an article", "Submit an article"],
   },
   {
     title: "Ex Footer title 1",

@@ -2,10 +2,10 @@ import Image from "next/image"
 
 const ArticleSection = () => {
   return (
-    <div className="bg-gray-50">
+    <div className="bg-gray-50 py-4">
         <div><h2 className="text-4xl leading-10 tracking-tight font-extrabold text-gray-900 ">
         From The Students</h2>
-        <p>
+        <p className="mt-4 text-xl leading-7 text-gray-500">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div>
         <div>
            <section>

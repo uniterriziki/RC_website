@@ -23,16 +23,17 @@ const ArticleForm = () => {
     //prevent the form from doing its normal behavior at first
     e.preventDefault();
     //the response awaits actions from the api route.js
-    const res = await fetch("/src/app/api/Articles", {
+    const res = await fetch("srcappapiArticles", {
       method: "POST",
       body: JSON.stringify({ formData }),
       "content-type": "application/json",
     });
-    //catch error in posting a new article
-    if (!res.ok) {
-      throw new Error("Failed to create Article");
-    }
+    // //catch error in posting a new article
+    // if (!res.ok) {
+    //   throw new Error("Failed to create Article");
+    // }
     //if no error, refresh the page and reroute to home
+    
     router.refresh();
     router.push("/");
   };

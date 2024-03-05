@@ -23,21 +23,51 @@ export const footerLinks = [
 export const images = [
   {
     id: 1,
-    src: "public\cat 1.jpg",
+    src: "/cat 1.jpg",
     title: "Article 1",
     desc: "First article 1",
   },
   {
     id: 2,
-    src: "public\cat 2.jpg",
+    src: "/cat 2.jpg",
     title: "Article 2",
     desc: "Second article 2",
   },
   {
     id: 3,
-    src: "public\cat 3.jpg",
+    src: "/cat 3.jpg",
     title: "Article 3",
-    desc: "Second article 3",
+    desc: "Third article 3",
+  },
+  {
+    id: 4,
+    src: "/bird 1.jpg",
+    title: "Article 4",
+    desc: "Fourth article 4",
+  },
+  {
+    id: 5,
+    src: "/cat 4.jpg",
+    title: "Article 5",
+    desc: "Fifth article 5",
+  },
+  {
+    id: 6,
+    src: "/horse 1.jpg",
+    title: "Article 6",
+    desc: "Sixth article 6",
+  },
+  {
+    id: 7,
+    src: "/horse 2.jpg",
+    title: "Article 7",
+    desc: "Seventh article 7",
+  },
+  {
+    id: 8,
+    src: "/dolphin 1.jpg",
+    title: "Article 8",
+    desc: "Eighth article 8",
   },
 ];
 

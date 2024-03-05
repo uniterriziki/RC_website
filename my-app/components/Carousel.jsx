@@ -3,7 +3,7 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import CarouselDescription from "./CarouselDescription";
-import { images } from "../constants";
+import { images } from "../constants/index"
 
 const Carousel = () => {
   const [activeImage, setActiveImage] = useState(0);
@@ -36,16 +36,16 @@ const Carousel = () => {
   return (
     <div className="bg-indigo-400 p-2 grid place-items-center grid-cols-2 w-full mx-auto max-w-5xl shadow-2xl rounded-2xl">
       <div className=" w-full flex justify-center items-center gap-4 transition-transform ease-in-out duration-500 rounded-2xl">
-        {images.map((pic, id) => (
+        {images.map((elem, idx) => (
           <div
-            className={`${id === activeImage
+            className={`${idx === activeImage
               ? "block w-full h-[80vh] object-cover transition-all duration-500 ease-in-out"
               : "hidden"
               }`}
-            key={id}
+            key={idx}
           >
             {/* <Image
-              src={pic.src}
+              src={elem.src}
               alt=""
               width={400}
               height={400}

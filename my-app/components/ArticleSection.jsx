@@ -7,12 +7,12 @@ const ArticleSection = () => {
         From The Students</h2>
         <p className="mt-4 text-xl leading-7 text-gray-500">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div>
-        <div>
+        <div className="mt-4">
            <section>
-            <Image src={"/room 1.jpg"} width={100} height={100}alt="Picture of the article blurb"/>
+            <Image src={"/room 1.jpg"} width={100} height={100}alt="Picture of the article blurb" className="object-cover w-full"/>
             </section> 
             <section className="p-6">
-                <p>Blog</p><h3>
+                <p className="text-sm leading-5 font-medium text-indigo-600">Blog</p><h3 className="text-xl leading-7 font-semibold text-gray-900 mt-2">
                 Lorem ipsum dolor</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
                 <div>

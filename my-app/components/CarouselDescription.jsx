@@ -21,12 +21,12 @@ const CarouselDescription = ({ clickNext, clickPrev, activeImgIndex }) => {
           }
         >
           <div className="py-16 text-5xl font-extrabold">{elem.title}</div>
-          <div className="leading-relaxed font-medium text-base tracking-white italic text-gray-600">
+          <div className="p-4 leading-relaxed font-medium text-base tracking-white italic text-gray-600">
             {elem.desc}
           </div>
 
           {/* Replace this button with that in a component */}
-          <Link href="/articles" className=" px-3 py-2 bg-indigo-400 text-white uppercase  rounded-md hover:text-fuchsia-600 hover:shadow-xl hover:shadow-red-300">
+          <Link href="/articles" className="ml-2 px-3 py-2 bg-indigo-400 text-white uppercase  rounded-md hover:text-fuchsia-600 hover:shadow-xl hover:shadow-red-300">
             Read This Now
           </Link>
           <div className="absolute bottom-1 w-full flex justify-center items-center">

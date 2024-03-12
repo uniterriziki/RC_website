@@ -3,9 +3,9 @@ import { NavLinks } from "../../../constants";
 
 const About = () => {
   return (
-    <div>
-      <h1 className="text-gray-600 text-bold text-4xl ">About US</h1>
-      <p>Lorem ipsum</p>
+    <div className="p-28 bg-red-600">
+      <h1 className="text-gray-600 text-bold text-4xl ">About Us</h1>
+      <p className="text-5xl text-bold text-red-500">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt, vero rem quod possimus saepe ipsa, error doloribus dolores voluptas eum dicta tempore ipsum vel. Laudantium vitae doloremque veritatis aliquam quod!</p>
     </div>
   );
 };

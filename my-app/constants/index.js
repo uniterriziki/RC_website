@@ -72,3 +72,25 @@ export const images = [
 ];
 
 
+export const socials = [
+  {
+    id: 1,
+    title: "instagram",
+    link: "https://www.instagram.com/",
+  },
+  {
+    id: 2,
+    title: "facebook",
+    link: "https://www.facebook.com/",
+  },
+  {
+    id: 3,
+    title: "twitter",
+    link: "https://www.twitter.com/",
+  },
+  {
+    id: 4,
+    title: "youtube",
+    link: "https://www.youtube.com/",
+  },
+]

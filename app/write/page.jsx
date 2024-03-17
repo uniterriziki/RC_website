@@ -9,7 +9,12 @@ import React from "react";
 
 const page = () => {
   const { data: session } = useSession();
-  if(!session || !session.user) return  ()
+  if (!session || !session.user)
+    return (
+      <div>
+        <p className="text-2xl text-red-500 p-4;">You need to sign In</p>
+      </div>
+    );
   return <div>protect this route</div>;
 };
 

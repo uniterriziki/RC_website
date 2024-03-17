@@ -1,4 +1,4 @@
-import { NavLinks } from "../constants";
+import { NavLinks } from "../lib/constants";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -26,11 +26,15 @@ const Navbar = async () => {
               href={link.href}
               key={link.key}
             >
-
               {link.text}
             </Link>
           ))}
-          <Link className=" px-2 rounded-lg hover:text-red-500 duration-500 hover:shadow-xl bg-indigo-200" href={"/signup"}>Sign Up</Link>
+          <Link
+            className=" px-2 rounded-lg hover:text-red-500 duration-500 hover:shadow-xl bg-indigo-200"
+            href={"/signup"}
+          >
+            Sign Up
+          </Link>
         </ul>
       </div>
     </nav>

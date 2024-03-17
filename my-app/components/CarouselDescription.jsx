@@ -1,5 +1,5 @@
 import React from "react";
-import { images } from "../constants";
+import { images } from "../lib/constants";
 import left from "../public/left.svg";
 import Image from "next/image";
 import Link from "next/link";
@@ -26,7 +26,10 @@ const CarouselDescription = ({ clickNext, clickPrev, activeImgIndex }) => {
           </div>
 
           {/* Replace this button with that in a component */}
-          <Link href="/articles" className="ml-2 px-3 py-2 bg-indigo-400 text-white uppercase  rounded-md hover:text-fuchsia-600 hover:shadow-xl hover:shadow-red-300">
+          <Link
+            href="/articles"
+            className="ml-2 px-3 py-2 bg-indigo-400 text-white uppercase  rounded-md hover:text-fuchsia-600 hover:shadow-xl hover:shadow-red-300"
+          >
             Read This Now
           </Link>
           <div className="absolute bottom-1 w-full flex justify-center items-center">

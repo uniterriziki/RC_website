@@ -3,7 +3,7 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import CarouselDescription from "./CarouselDescription";
-import { images } from "../constants/index"
+import { images } from "../lib/constants/index";
 
 const Carousel = () => {
   const [activeImage, setActiveImage] = useState(0);
@@ -38,10 +38,11 @@ const Carousel = () => {
       <div className=" w-full flex justify-center items-center gap-4 transition-transform ease-in-out duration-500 rounded-2xl ">
         {images.map((pic, idx) => (
           <div
-            className={`${idx === activeImage
-              ? "block w-full h-[80vh] object-cover transition-all duration-500 ease-in-out " 
-              : "hidden"
-              }`}
+            className={`${
+              idx === activeImage
+                ? "block w-full h-[80vh] object-cover transition-all duration-500 ease-in-out "
+                : "hidden"
+            }`}
             key={idx}
           >
             <Image

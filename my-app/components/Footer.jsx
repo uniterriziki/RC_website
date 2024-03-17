@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { footerLinks } from "../constants";
+import { footerLinks } from "../lib/constants";
 
 const FooterColumn = ({ title, links }) => (
   <div className="footer_column">
@@ -27,8 +27,18 @@ const Footer = () => {
         </div>
         <div className="flex flex-wrap gap-12">
           <div className="flex flex-col gap-3">
-            <Link href={"/"} className=" h-fit px-2 rounded-lg hover:text-red-500 duration-500 hover:shadow-xl bg-indigo-200">Read an Article</Link>
-            <Link href={"/"} className=" h-fit px-2 rounded-lg hover:text-red-500 duration-500 hover:shadow-xl bg-indigo-200">Submit an Article</Link>
+            <Link
+              href={"/"}
+              className=" h-fit px-2 rounded-lg hover:text-red-500 duration-500 hover:shadow-xl bg-indigo-200"
+            >
+              Read an Article
+            </Link>
+            <Link
+              href={"/"}
+              className=" h-fit px-2 rounded-lg hover:text-red-500 duration-500 hover:shadow-xl bg-indigo-200"
+            >
+              Submit an Article
+            </Link>
           </div>
 
           <div className="flex-1 flex flex-col gap-4">
@@ -36,7 +46,6 @@ const Footer = () => {
               title={footerLinks[1].title}
               links={footerLinks[1].links}
             />
-
           </div>
           <FooterColumn
             title={footerLinks[1].title}
@@ -47,14 +56,12 @@ const Footer = () => {
               title={footerLinks[1].title}
               links={footerLinks[1].links}
             />
-
           </div>
         </div>
       </div>
 
       <div className=" flexBetween bg-indigo-300 footer_copyright">
         <p className="text-center">@ 2024 RC-UON. All Rights Reserved</p>
-
       </div>
     </footer>
   );

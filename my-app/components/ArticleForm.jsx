@@ -26,7 +26,9 @@ const ArticleForm = () => {
           placeholder="Write your article here"
           className="border border-red-500"
         />
-        <button type="submit">Submit Article</button>
+        <button type="submit" className="border border-red-600">
+          Submit Article
+        </button>
       </form>
     </div>
   );

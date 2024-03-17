@@ -35,4 +35,4 @@ model Comment {
     articleId String  @db.ObjectId
 }
 
-//if schema.prisma is updated, run 'prisma db push' to regenerate prisma client
+//if schema.prisma is updated, run 'npx prisma db push' to regenerate prisma client

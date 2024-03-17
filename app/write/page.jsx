@@ -1,6 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 import { revalidatePath } from "next/cache";
-import ArticleForm from "../../../components/ArticleForm";
+import ArticleForm from "../../components/ArticleForm";
 
 const prisma = new PrismaClient();
 

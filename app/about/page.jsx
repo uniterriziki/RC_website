@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLinks } from "../../../lib/constants";
+import { NavLinks } from "../../lib/constants";
 
 const About = () => {
   return (

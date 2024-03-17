@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
-import { getSession, login, logout } from "../../../lib/actions/authAction";
+import { getSession, login, logout } from "../../lib/actions/authAction";
 
 //it is a server component hence mark it async
 export default async function Page() {

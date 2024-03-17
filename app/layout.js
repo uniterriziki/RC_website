@@ -1,8 +1,8 @@
 //This will be the duplicated layout of the website passing in components and children
 
 import "./globals.css";
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 //for SEO
 export const metadata = {

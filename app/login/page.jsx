@@ -1,35 +1,38 @@
-import { redirect } from "next/navigation";
-import { getSession, login, logout } from "../../lib/actions/authAction";
+import { auth, signIn, signOut } from "auth";
 
-//it is a server component hence mark it async
-export default async function Page() {
-  //session refers to the ability to be within the application
-  const session = await getSession();
+//using an async function as it will be checking things on the server
+async function login() {
+  const session = await auth;
   return (
-    <section>
-      {/* login form */}
-      <form
-        action={async (formData) => {
-          "use server";
-          await login(formData);
-          redirect("/");
-        }}
-      >
-        <input type="email" placeholder="Email" />
-        <br />
-        <button type="submit">Login</button>
-      </form>
-      {/* logout form */}
-      <form
-        action={async () => {
-          "use server";
-          await logout();
-          redirect("/");
-        }}
-      >
-        <button type="submit">Logout</button>
-      </form>
-      <pre>{JSON.stringify(session, null, 2)}</pre>
-    </section>
+    <div className="p-2 bg-gradient-to-b from-slate-800 to-slate-600 flex gap-2">
+      {/* CHECK IF THE SESSION EXISTS AND IF IT HAS A USER IN IT */}
+      <div className="ml-auto">
+        {session && session.user ? (
+          <div>
+            {/* case 1, if session and user exist, return username and sign out is a server component here*/}
+            <p>{session.user.name}</p>
+            <form
+              action={async () => {
+                "use server";
+                await signOut();
+              }}
+            >
+              <button type="submit">Sign Out</button>
+            </form>
+          </div>
+        ) : (
+          <form
+            action={async () => {
+              "use server";
+              await signIn();
+            }}
+          >
+            <button type="submit">Sign In</button>
+          </form>
+        )}
+      </div>
+    </div>
   );
 }
+
+export default login;

@@ -1,12 +1,13 @@
 "use client";
 //use client in order to actually reset the form when used
 
-import { addArticle } from "../lib/actions/formAction";
+import { addArticle } from "../lib/actions/formAction"; //import the form action which takes care of the api calls
 import { useRef } from "react"; //https://react.dev/reference/react/useRef
 
 const ArticleForm = () => {
   return (
     <div>
+      {/* use the inbuilt next.js form here and store data in a variable formData */}
       <form
         action={async (formData) => {
           await addArticle(formData);

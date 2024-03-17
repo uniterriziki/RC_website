@@ -4,7 +4,7 @@ export const NavLinks = [
   { href: "/articles", key: "Articles", text: "Articles" },
   { href: "/about", key: "About Us", text: "About Us" },
   { href: "/contact", key: "Contact Us", text: "Contact Us" },
-  // { href: "/create-article", key: "Create Article", text: "Create Article" },
+  { href: "/write", key: "Write", text: "Write" },
 ];
 
 //use these in the component Footer.jsx
@@ -71,7 +71,7 @@ export const images = [
   },
 ];
 
-
+//these are the social media links to be called anywhere we have the social icons
 export const socials = [
   {
     id: 1,

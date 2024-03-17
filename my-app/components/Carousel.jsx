@@ -1,4 +1,6 @@
 "use client";
+//allow mutations on the client
+
 
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
@@ -7,6 +9,7 @@ import { images } from "../lib/constants/index";
 
 const Carousel = () => {
   const [activeImage, setActiveImage] = useState(0);
+  //useState to determine active images and allow the client change to a new active image
 
   //if the active image is equal to the last image length - 1, show the first element 0, else just increase by 1
   const clickNext = () => {
@@ -36,6 +39,7 @@ const Carousel = () => {
   return (
     <div className="bg-indigo-400 p-2 grid place-items-center grid-cols-2 w-full mx-auto max-w-5xl shadow-2xl rounded-2xl">
       <div className=" w-full flex justify-center items-center gap-4 transition-transform ease-in-out duration-500 rounded-2xl ">
+        {/* map through images which are located have been stored in our constants */}
         {images.map((pic, idx) => (
           <div
             className={`${

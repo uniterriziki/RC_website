@@ -1,3 +1,5 @@
+//this component describes or displays the data relating to the article in the website
+
 import Image from "next/image"
 
 const ArticleSection = () => {

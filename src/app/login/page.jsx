@@ -1,31 +1,35 @@
-// https://nextjs.org/docs/app/building-your-application/authentication
+import { redirect } from "next/navigation";
+import { getSession, login, logout } from "../../../lib/actions/authAction";
 
-import { authenticate } from "../../../lib/actions/authAction";
-
-export default function Page() {
+//it is a server component hence mark it async
+export default async function Page() {
+  //session refers to the ability to be within the application
+  const session = await getSession();
   return (
-    <form action={authenticate}>
-      <input
-        type="email"
-        name="email"
-        placeholder="your email"
-        required
-        unique
-        className="text-gray-500 border border-red-600"
-      />
-      <input
-        type="password"
-        name="password"
-        placeholder="your password"
-        required
-        className="text-gray-500 border border-red-600"
-      />
-      <button
-        type="submit"
-        className="bg-red-200 hover:cursor-pointer shadow-lg hover:bg-red-400"
+    <section>
+      {/* login form */}
+      <form
+        action={async (formData) => {
+          "use server";
+          await login(formData);
+          redirect("/");
+        }}
       >
-        Login
-      </button>
-    </form>
+        <input type="email" placeholder="Email" />
+        <br />
+        <button type="submit">Login</button>
+      </form>
+      {/* logout form */}
+      <form
+        action={async () => {
+          "use server";
+          await logout();
+          redirect("/");
+        }}
+      >
+        <button type="submit">Logout</button>
+      </form>
+      <pre>{JSON.stringify(session, null, 2)}</pre>
+    </section>
   );
 }

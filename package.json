@@ -11,6 +11,7 @@
   "dependencies": {
     "-": "^0.0.1",
     "@prisma/client": "^5.11.0",
+    "jose": "^5.2.3",
     "mongodb": "^6.4.0",
     "next": "14.1.0",
     "next-auth": "^4.24.6",

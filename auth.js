@@ -1,4 +1,4 @@
-//this file has not naming convention and may be named otherwise. it is stored in root folder to be accessed globally
+//this file has no naming convention and may be named otherwise. it is stored in root folder to be accessed globally
 
 import NextAuth from "next-auth";
 import GitHub from "next-auth/providers/github";

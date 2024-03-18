@@ -6,16 +6,22 @@ import ArticleForm from "../../components/ArticleForm";
 import { useSession } from "next-auth/react";
 
 import React from "react";
+import ArticlePicker from "../../components/richtext-ui/ArticlePicker";
 
 const page = () => {
-  const { data: session } = useSession();
-  if (!session || !session.user)
-    return (
-      <div>
-        <p className="text-2xl text-red-500 p-4;">You need to sign In</p>
-      </div>
-    );
-  return <div>protect this route</div>;
+  // const { data: session } = useSession();
+  // if (!session || !session.user)
+  //   return (
+  //     <div>
+  //       <p className="text-2xl text-red-500 p-4;">You need to sign In</p>
+  //     </div>
+  //   );
+  return (
+    <div>
+      <h1>protect this route</h1>
+      <ArticlePicker />
+    </div>
+  );
 };
 
 export default page;

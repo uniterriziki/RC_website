@@ -1,7 +1,6 @@
 "use client";
 //allow mutations on the client
 
-
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import CarouselDescription from "./CarouselDescription";
@@ -37,8 +36,8 @@ const Carousel = () => {
   }, [activeImage]);
 
   return (
-    <div className="bg-indigo-400 p-2 grid place-items-center grid-cols-2 w-full mx-auto max-w-5xl shadow-2xl rounded-2xl">
-      <div className=" w-full flex justify-center items-center gap-4 transition-transform ease-in-out duration-500 rounded-2xl ">
+    <div className="bg-indigo-400 p-2 grid place-items-center mx-auto max-w-xl shadow-2xl rounded-2xl">
+      <div className=" w-full flex justify-center items-center gap-0 transition-transform ease-in-out duration-500 rounded-2xl ">
         {/* map through images which are located have been stored in our constants */}
         {images.map((pic, idx) => (
           <div
@@ -54,7 +53,7 @@ const Carousel = () => {
               alt=""
               width={400}
               height={400}
-              className="w-full h-full object-cover rounded-tl-3xl rounded-bl-3xl hover:shadow-red-500 hover:shadow-2xl hover:cursor-pointer"
+              className="w-full h-full object-cover rounded-tl-3xl rounded-bl-3xl hover:shadow-3xl hover:cursor-pointer"
             />
           </div>
         ))}

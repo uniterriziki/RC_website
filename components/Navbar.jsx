@@ -30,7 +30,7 @@ const Navbar = async () => {
             </Link>
           ))}
           <Link
-            className=" px-2 rounded-lg hover:text-red-500 duration-500 hover:shadow-xl bg-indigo-200"
+            className=" px-2 hover:text-red-500 duration-500 hover:shadow-xl bg-indigo-200"
             href={"/signup"}
           >
             Sign Up

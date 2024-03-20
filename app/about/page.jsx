@@ -1,5 +1,9 @@
 import Image from "next/image";
 
+export const metadata = {
+  title: "About", //title: {absolute: "sth sth sth here"}
+};
+
 const About = () => {
   return (
     <div className="bg-slate-300">

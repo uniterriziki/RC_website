@@ -7,8 +7,14 @@ import Providers from "../components/Providers"; //everything in the site is wra
 
 //for SEO
 export const metadata = {
-  title: "UON Research Club",
-  description: "UON Research Club",
+  title: {
+    default: "UON Research Club", //applied defaults in case we need to pass a more specific title later
+    template: "%s - UON Research Club",
+  },
+  description: "UON Research Club", //this is shown if the web link is pasted in other websites
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export default function RootLayout({ children }) {
@@ -16,9 +22,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <Providers>
-        <Navbar />
-        <main>{children}</main>
-        {/* <Footer /> */}
+          <Navbar />
+          <main>{children}</main>
+          {/* <Footer /> */}
         </Providers>
       </body>
     </html>

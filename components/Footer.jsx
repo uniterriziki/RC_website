@@ -1,11 +1,13 @@
 import React from "react";
 import Link from "next/link";
 import { footerLinks } from "../lib/constants";
+import { socials } from "../lib/constants";
+import Image from "next/image";
 
 const FooterColumn = ({ title, links }) => (
-  <div className="footer_column">
-    <h4 className="font-semibold">{title}</h4>
-    <ul className="flex flex-col gap-2 font-normal">
+  <div>
+    <h4 className="font-bold text-white">{title}</h4>
+    <ul className="flex flex-col gap-2 font-normal text-slate-300">
       {links.map((link) => (
         <Link href="/" key={link}>
           {link}
@@ -14,37 +16,38 @@ const FooterColumn = ({ title, links }) => (
     </ul>
   </div>
 );
+const Socials = ({ id, link, icon }) => (
+  <div>
+    <ul className="grid grid-cols-4 p-2 hover:cursor-pointer gap-6 text-3xl text-red-500">
+      {socials.map((link) => (
+        <Link
+          href={link.href}
+          key={link.title}
+          target="_blank"
+          className="hover:bg-white hover:text-red-900 rounded-xl p-2 hover:shadow-[rgba(0,_0,_0,_0.25)_0px_25px_50px_-12px]"
+        >
+          {link.icon}
+        </Link>
+      ))}
+    </ul>
+  </div>
+);
 const Footer = () => {
   return (
-    <footer className="flexStart footer">
-      <div className="flex flex-col gap-12 w-full">
-        <div className="flex items-start flex-col">
-          {/* <Image src="/logo-purple.svg" width={115} height={38} alt="RC UON" /> */}
+    <footer className="mt-24 bg-slate-600">
+      <div className="ml-6 flex flex-col gap-12 w-full">
+        <div className="mt-2 flex items-start flex-col">
+          <Image src="/medical logo.jpg" width={115} height={38} alt="RC UON" />
 
-          <p className="text-red-400 text-start text-sm font-normal mt-5 max-w-xs">
-            RC UON, meet your medicine students
+          <p className="text-white text-start text-lg font-normal mt-5 max-w-xs">
+            Meet your medical students
           </p>
         </div>
         <div className="flex flex-wrap gap-12">
-          <div className="flex flex-col gap-3">
-            <Link
-              href={"/"}
-              className=" h-fit px-2 rounded-lg hover:text-red-500 duration-500 hover:shadow-xl bg-indigo-200"
-            >
-              Read an Article
-            </Link>
-            <Link
-              href={"/"}
-              className=" h-fit px-2 rounded-lg hover:text-red-500 duration-500 hover:shadow-xl bg-indigo-200"
-            >
-              Submit an Article
-            </Link>
-          </div>
-
-          <div className="flex-1 flex flex-col gap-4">
+          <div className="justify-between flex-col gap-4">
             <FooterColumn
-              title={footerLinks[1].title}
-              links={footerLinks[1].links}
+              title={footerLinks[0].title}
+              links={footerLinks[0].links}
             />
           </div>
           <FooterColumn
@@ -53,15 +56,21 @@ const Footer = () => {
           />
           <div className="flex-1 flex flex-col gap-4">
             <FooterColumn
-              title={footerLinks[1].title}
-              links={footerLinks[1].links}
+              title={footerLinks[2].title}
+              links={footerLinks[2].links}
             />
           </div>
         </div>
+        <div className="w-full border border-white h-1/2 bg-white text-white"></div>
+        <div className="flex gap-4">
+          <Socials />
+        </div>
       </div>
 
-      <div className=" flexBetween bg-indigo-300 footer_copyright">
-        <p className="text-center">@ 2024 RC-UON. All Rights Reserved</p>
+      <div className=" flexBetween">
+        <p className="text-center italic text-sm font-bold">
+          ©2024 RC-UON. All Rights Reserved
+        </p>
       </div>
     </footer>
   );

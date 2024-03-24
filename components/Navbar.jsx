@@ -19,6 +19,7 @@ const Navbar = async () => {
             height={115}
             width={85}
             alt="Medical Club Logo"
+            className="cursor-pointer"
           />
         </Link>
       </div>

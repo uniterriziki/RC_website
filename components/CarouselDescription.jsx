@@ -1,12 +1,10 @@
 import React from "react";
 import { images } from "../lib/constants";
-import left from "../public/left.svg";
-import Image from "next/image";
 import Link from "next/link";
 
 const CarouselDescription = ({ clickNext, clickPrev, activeImgIndex }) => {
   return (
-    <div className="grid place-items-start w-full bg-[#e7dfd9] relative rounded-tr-3xl rounded-br-3xl">
+    <div className=" h-[50vh] w-full bg-[#e7dfd9] rounded-tr-xl rounded-br-xl">
       <div className="uppercase text-sm absolute right-4 top-2 underline underline-offset-4">
         RC UON
       </div>

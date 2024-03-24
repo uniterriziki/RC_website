@@ -1,6 +1,7 @@
 import { NavLinks } from "../lib/constants";
 import Image from "next/image";
 import Link from "next/link";
+import { Montserrat } from "next/font/google";
 
 //import AuthProviders from "./AuthProviders.jsx";
 // import { getCurrentUser } from "@/lib/session";
@@ -10,7 +11,7 @@ const Navbar = async () => {
   //const session = await getCurrentUser();
 
   return (
-    <nav className="bg-white h-20 p-0 shadow md:flex md:items-end md:justify-between ">
+    <nav className="bg-white h-16 md:flex md:items-end md:justify-between ">
       <span className="text-2xl font-[Poppins] cursor-pointer px-6">
         <Link href="/">
           <p>RC UON Logo</p>
@@ -18,8 +19,8 @@ const Navbar = async () => {
         </Link>
       </span>
 
-      <div className="pb-9 gap-10 px-40">
-        <ul className="md:flex hidden text-small gap-7 justify-end ">
+      <div className="justify-between gap-10 px-46">
+        <ul className="md:flex hidden text-base gap-6 justify-end ">
           {NavLinks.map((link) => (
             <Link
               className="hover:text-red-500 duration-500 hover:shadow-xl"
@@ -30,7 +31,7 @@ const Navbar = async () => {
             </Link>
           ))}
           <Link
-            className=" px-2 hover:text-red-500 duration-500 hover:shadow-xl bg-indigo-200"
+            className=" px-4 flex text-white text-semibold hover:text-red-500 duration-500 hover:shadow-xl bg-blue-400 rounded-xl"
             href={"/signup"}
           >
             Sign Up

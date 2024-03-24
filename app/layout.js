@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Providers from "../components/Providers"; //everything in the site is wrapped with providers but doesn't make everything a client component.
+import Header from "components/Header";
 
 //for SEO
 export const metadata = {
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <Providers>
+          <Header />
           <Navbar />
           <main>{children}</main>
           {/* <Footer /> */}

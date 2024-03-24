@@ -12,12 +12,14 @@ const Navbar = async () => {
 
   return (
     <nav className="bg-white h-16 md:flex md:items-end md:justify-between ">
-      <span className="text-2xl font-[Poppins] cursor-pointer px-6">
-        <Link href="/">
-          <p>RC UON Logo</p>
-          {/* <Image src="/logo.svg" width={115} height={43} alt="RC-UON" /> */}
-        </Link>
-      </span>
+      <Link href="/">
+        <Image
+          src={"/medical logo.jpg"}
+          height={115}
+          width={85}
+          alt="Medical Club Logo"
+        />
+      </Link>
 
       <div className="justify-between gap-10 px-46">
         <ul className="md:flex hidden text-base gap-6 justify-end ">

@@ -36,24 +36,25 @@ const Carousel = () => {
   }, [activeImage]);
 
   return (
-    <div className="bg-indigo-400 h-[60vh] w-[200vh] mt-10 grid place-items-center mx-auto max-w-xl shadow-2xl rounded-xl">
+    <div className=" h-[70vh] w-[50vw] mt-5 grid place-items-center mx-auto max-w-none shadow-2xl rounded-xl" style={{
+      background: 'linear-gradient(to right, #2a338a, #843b81)'
+    }}>
       <div className=" w-full flex justify-center items-center gap-0 transition-transform ease-in-out duration-500 rounded-xl ">
         {/* map through images which are located have been stored in our constants */}
         {images.map((pic, idx) => (
           <div
-            className={`${
-              idx === activeImage
-                ? "block w-full h-[50vh] object-cover transition-all duration-500 ease-in-out "
-                : "hidden"
-            }`}
+            className={`${idx === activeImage
+              ? "block w-full h-[90vh] object-cover transition-all duration-500 ease-in-out "
+              : "hidden"
+              }`}
             key={idx}
           >
             <Image
               src={pic.src}
               alt=""
-              width={400}
-              height={400}
-              className="w-full h-[50vh] object-cover rounded-tl-xl rounded-bl-xl hover:shadow-2xl hover:cursor-pointer"
+              width={500}
+              height={500}
+              className="px-10  w-full h-[60vh] object-cover rounded-tl-xl rounded-bl-xl hover:shadow-2xl hover:cursor-pointer"
             />
           </div>
         ))}

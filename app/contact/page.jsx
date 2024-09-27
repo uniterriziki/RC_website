@@ -10,7 +10,7 @@ const page = () => {
           <div className="flex flex-col space-y-8 justify-between">
             <div>
               <h1 className="font-bold text-4xl tracking-wide">Contact US</h1>
-              <p className="pt-2 text-cyan-200 text-sm ">
+              <p className="pt-2 text-black text-sm ">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy
                 text ever since the 1500s

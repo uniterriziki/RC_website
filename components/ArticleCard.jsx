@@ -16,10 +16,10 @@ const ArticleCard = ({ className }) => {
         />
         <div className="p-2">
           <h2 className="font-roboto font-bold text-xl text-dark-soft md:text-2xl">
-            Future of Medicine
+            Understanding the Why
           </h2>
           <p className="text-dark-light mt-3 text-sm md:text-lg">
-            In future, we will revolutionize medicine
+            In future, we will revolutionize medicine, or not
           </p>
         </div>
       </div>

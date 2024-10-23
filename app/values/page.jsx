@@ -19,7 +19,7 @@ export default function Values() {
               Our Mission, Vision, and Values
             </h1>
             <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl mt-4">
-              Guiding principles that shape our company and drive our success.
+              Who We Are.
             </p>
           </div>
         </section>

@@ -1,7 +1,6 @@
 // THIS WILL BE THE HOMEPAGE OF THE APP
 import "tailwindcss/tailwind.css";
 import Link from "next/link";
-import ArticleCard from "components/ArticleCard";
 
 export default function Home() {
   return (
@@ -27,10 +26,6 @@ export default function Home() {
             <img src="/." alt="" />
           </div>
         </section>
-      </section>
-
-      <section className="container mx-auto grid grid-cols-3 md:gap-x-5 gap-y-5 px-5 py-10 mt-10">
-        <ArticleCard className="w-full md:w-[calc(50%-20px)] lg:w-[calc(33.33%-20px)] md:gap-4" />
       </section>
     </main>
   );

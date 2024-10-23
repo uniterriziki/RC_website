@@ -1,176 +1,127 @@
-// import { useEffect, useState } from "react";
-
-// // Function to fetch article data from local files
-// const fetchArticle = async (id) => {
-//   try {
-//     const article = await import(`../articles/${id}.json`);
-//     return article.default;
-//   } catch (error) {
-//     console.error("Failed to load article:", error);
-//     return null;
-//   }
-// };
-
-// export default function ArticlePage({ params }) {
-//   const [article, setArticle] = useState(null);
-//   const [loading, setLoading] = useState(true);
-
-//   useEffect(() => {
-//     const loadArticle = async () => {
-//       try {
-//         const data = await fetchArticle(params.id);
-//         setArticle(data);
-//       } catch (error) {
-//         console.error("Failed to fetch article:", error);
-//       } finally {
-//         setLoading(false);
-//       }
-//     };
-
-//     loadArticle();
-//   }, [params.id]);
-
-//   if (loading) {
-//     return <ArticleSkeleton />;
-//   }
-
-//   if (!article) {
-//     return <div className="text-center py-10">Article not found</div>;
-//   }
-
-//   return (
-//     <div className="container mx-auto py-8 px-4 max-w-4xl">
-//       <div className="mb-8 p-6 bg-white shadow rounded">
-//         <div className="mb-4">
-//           <h2 className="text-2xl font-bold mb-2">{article.title}</h2>
-//           <p>
-//             By {article.authors.join(", ")} | Published on{" "}
-//             {article.publishedDate}
-//           </p>
-//         </div>
-//         <div>
-//           <h2 className="text-xl font-semibold mb-2">Abstract</h2>
-//           <p className="mb-4 text-muted-foreground">{article.abstract}</p>
-//           <div className="h-[300px] overflow-y-auto rounded-md border p-4">
-//             <h2 className="text-xl font-semibold mb-2">Content</h2>
-//             <p className="whitespace-pre-wrap">{article.content}</p>
-//           </div>
-//         </div>
-//       </div>
-//       <div className="p-6 bg-white shadow rounded">
-//         <div className="mb-4">
-//           <h2 className="text-xl font-semibold">References</h2>
-//         </div>
-//         <div>
-//           <ul className="list-disc pl-5 space-y-2">
-//             {article.references.map((ref, index) => (
-//               <li key={index} className="text-sm text-muted-foreground">
-//                 {ref}
-//               </li>
-//             ))}
-//           </ul>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-// function ArticleSkeleton() {
-//   return (
-//     <div className="container mx-auto py-8 px-4 max-w-4xl">
-//       <div className="mb-8 p-6 bg-white shadow rounded">
-//         <div className="mb-4">
-//           <div className="h-8 w-3/4 bg-gray-300 mb-2" />
-//           <div className="h-4 w-1/2 bg-gray-300" />
-//         </div>
-//         <div>
-//           <div className="h-4 w-full bg-gray-300 mb-2" />
-//           <div className="h-4 w-full bg-gray-300 mb-2" />
-//           <div className="h-4 w-3/4 bg-gray-300" />
-//           <div className="mt-4 h-[300px] w-full rounded-md bg-gray-200" />
-//         </div>
-//       </div>
-//       <div className="p-6 bg-white shadow rounded">
-//         <div className="mb-4">
-//           <div className="h-6 w-1/4 bg-gray-300" />
-//         </div>
-//         <div>
-//           <div className="h-4 w-full bg-gray-300 mb-2" />
-//           <div className="h-4 w-full bg-gray-300 mb-2" />
-//           <div className="h-4 w-3/4 bg-gray-300" />
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
 "use client";
 import { useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation"; // Import useSearchParams from next/navigation
+import { useRouter } from "next/navigation";
+import {
+  article1,
+  article2,
+  article3,
+  article4,
+} from "../../../lib/article/index";
+import { Loader2 } from "lucide-react";
 
-// Function to fetch article data from local files
-const fetchArticle = async (id) => {
-  try {
-    const article = await import(`../../lib/article/${id}.json`);
-    return article;
-  } catch (error) {
-    console.error("Failed to load article:", error);
-    return null;
-  }
+const articlesMap = {
+  1: article1,
+  2: article2,
+  3: article3,
+  4: article4,
 };
 
 export default function ArticlePage() {
   const [article, setArticle] = useState(null);
   const [loading, setLoading] = useState(true);
-  const searchParams = useSearchParams(); // Get search params
-
-  // Use the article ID from the search parameters
-  const id = searchParams.get("id"); // Extract the article ID from the search params
+  const router = useRouter();
 
   useEffect(() => {
-    const loadArticle = async () => {
-      if (id) {
-        // Ensure the ID is available before fetching
-        try {
-          const data = await fetchArticle(id);
-          setArticle(data);
-        } catch (error) {
-          console.error("Failed to fetch article:", error);
-        } finally {
-          setLoading(false);
-        }
+    console.log(router.query); // Debug line
+    if (router.query?.id) {
+      const id = parseInt(router.query.id, 10); // Convert to integer
+      const data = articlesMap[id];
+      if (data) {
+        setArticle(data);
       }
-    };
-
-    loadArticle();
-  }, [id]); // Depend on the article ID
+      setLoading(false);
+    }
+  }, [router.query]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <Loader2 className="h-8 w-8 animate-spin mx-auto mb-4 text-blue-600" />
+          <p className="text-gray-600">Loading article...</p>
+        </div>
+      </div>
+    );
   }
 
   if (!article) {
-    return <div className="text-center py-10">Article not found</div>;
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center max-w-md mx-auto px-4">
+          <h2 className="text-2xl font-semibold text-gray-800 mb-2">
+            Article Not Found
+          </h2>
+          <p className="text-gray-600 mb-6">
+            We couldn't find the article you're looking for.
+          </p>
+          <button
+            onClick={() => router.push("/articles")}
+            className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
+          >
+            Return to Articles
+          </button>
+        </div>
+      </div>
+    );
   }
 
   return (
-    <div className="container mx-auto py-8 px-4 max-w-4xl">
-      <div className="mb-8 p-6 bg-white shadow rounded">
-        <div className="mb-4">
-          <h2 className="text-2xl font-bold mb-2">{article.title}</h2>
-          <p>
-            By {article.authors.join(", ")} | Published on{" "}
-            {article.publishedDate}
-          </p>
-        </div>
-        <div>
-          <h2 className="text-xl font-semibold mb-2">Abstract</h2>
-          <p className="mb-4">{article.abstract}</p>
-          <div className="h-[300px] overflow-y-auto rounded-md border p-4">
-            <h2 className="text-xl font-semibold mb-2">Content</h2>
-            <p>{article.content}</p>
+    <div className="min-h-screen bg-gray-50 py-12">
+      <div className="container mx-auto px-4 max-w-4xl">
+        <article className="bg-white rounded-lg shadow-lg overflow-hidden">
+          {/* Article Header */}
+          <div className="p-6 border-b">
+            <h1 className="text-3xl font-bold text-gray-900 mb-4">
+              {article.title}
+            </h1>
+            <div className="flex flex-wrap items-center text-sm text-gray-600 gap-4">
+              <div className="flex items-center">
+                <span className="font-medium">Authors:</span>
+                <span className="ml-2">{article.authors.join(", ")}</span>
+              </div>
+              <div className="flex items-center">
+                <span className="font-medium">Published:</span>
+                <time className="ml-2">{article.publishedDate}</time>
+              </div>
+            </div>
           </div>
-        </div>
+
+          {/* Abstract Section */}
+          <div className="p-6 bg-gray-50 border-b">
+            <h2 className="text-xl font-semibold text-gray-900 mb-3">
+              Abstract
+            </h2>
+            <p className="text-gray-700 leading-relaxed">{article.abstract}</p>
+          </div>
+
+          {/* Content Section */}
+          <div className="p-6">
+            <h2 className="text-xl font-semibold text-gray-900 mb-4">
+              Full Article
+            </h2>
+            <div className="prose max-w-none">
+              <p className="text-gray-700 leading-relaxed whitespace-pre-wrap">
+                {article.content}
+              </p>
+            </div>
+          </div>
+
+          {/* Article Footer */}
+          <div className="px-6 py-4 bg-gray-50 border-t flex justify-between items-center">
+            <button
+              onClick={() => router.push("/articles")}
+              className="text-blue-600 hover:text-blue-700 transition-colors"
+            >
+              ← Back to Articles
+            </button>
+            <button
+              onClick={() => window.print()}
+              className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
+            >
+              Print Article
+            </button>
+          </div>
+        </article>
       </div>
     </div>
   );

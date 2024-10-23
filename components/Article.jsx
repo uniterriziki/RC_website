@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { articles } from 'lib/articles';
+import { articles } from 'lib/article';
 
 export const Article = ({ id, title, body, image, author, date }) => {
   // Create a blurb by truncating the body for display

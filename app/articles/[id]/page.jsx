@@ -1,54 +1,177 @@
-import { cache } from "react";
+// import { useEffect, useState } from "react";
 
-//fast fetching the data from posts, this makes the page change from dynamically rendered (lambda) to SSG at build time
-// export async function generateStaticParams() {
-//   const response = await fetch();
-//   const { posts } = await response.json();
+// // Function to fetch article data from local files
+// const fetchArticle = async (id) => {
+//   try {
+//     const article = await import(`../articles/${id}.json`);
+//     return article.default;
+//   } catch (error) {
+//     console.error("Failed to load article:", error);
+//     return null;
+//   }
+// };
 
-//   return posts.map(({ id }) => id); //return array sample [ "1", "2", "3"]
+// export default function ArticlePage({ params }) {
+//   const [article, setArticle] = useState(null);
+//   const [loading, setLoading] = useState(true);
+
+//   useEffect(() => {
+//     const loadArticle = async () => {
+//       try {
+//         const data = await fetchArticle(params.id);
+//         setArticle(data);
+//       } catch (error) {
+//         console.error("Failed to fetch article:", error);
+//       } finally {
+//         setLoading(false);
+//       }
+//     };
+
+//     loadArticle();
+//   }, [params.id]);
+
+//   if (loading) {
+//     return <ArticleSkeleton />;
+//   }
+
+//   if (!article) {
+//     return <div className="text-center py-10">Article not found</div>;
+//   }
+
+//   return (
+//     <div className="container mx-auto py-8 px-4 max-w-4xl">
+//       <div className="mb-8 p-6 bg-white shadow rounded">
+//         <div className="mb-4">
+//           <h2 className="text-2xl font-bold mb-2">{article.title}</h2>
+//           <p>
+//             By {article.authors.join(", ")} | Published on{" "}
+//             {article.publishedDate}
+//           </p>
+//         </div>
+//         <div>
+//           <h2 className="text-xl font-semibold mb-2">Abstract</h2>
+//           <p className="mb-4 text-muted-foreground">{article.abstract}</p>
+//           <div className="h-[300px] overflow-y-auto rounded-md border p-4">
+//             <h2 className="text-xl font-semibold mb-2">Content</h2>
+//             <p className="whitespace-pre-wrap">{article.content}</p>
+//           </div>
+//         </div>
+//       </div>
+//       <div className="p-6 bg-white shadow rounded">
+//         <div className="mb-4">
+//           <h2 className="text-xl font-semibold">References</h2>
+//         </div>
+//         <div>
+//           <ul className="list-disc pl-5 space-y-2">
+//             {article.references.map((ref, index) => (
+//               <li key={index} className="text-sm text-muted-foreground">
+//                 {ref}
+//               </li>
+//             ))}
+//           </ul>
+//         </div>
+//       </div>
+//     </div>
+//   );
 // }
 
-//manual fetch duplication if fetch is through an ORM
-const getPost = cache(async (postId) => {
-  const post = await prisma.post.findUnique(postId);
-  return post;
-});
+// function ArticleSkeleton() {
+//   return (
+//     <div className="container mx-auto py-8 px-4 max-w-4xl">
+//       <div className="mb-8 p-6 bg-white shadow rounded">
+//         <div className="mb-4">
+//           <div className="h-8 w-3/4 bg-gray-300 mb-2" />
+//           <div className="h-4 w-1/2 bg-gray-300" />
+//         </div>
+//         <div>
+//           <div className="h-4 w-full bg-gray-300 mb-2" />
+//           <div className="h-4 w-full bg-gray-300 mb-2" />
+//           <div className="h-4 w-3/4 bg-gray-300" />
+//           <div className="mt-4 h-[300px] w-full rounded-md bg-gray-200" />
+//         </div>
+//       </div>
+//       <div className="p-6 bg-white shadow rounded">
+//         <div className="mb-4">
+//           <div className="h-6 w-1/4 bg-gray-300" />
+//         </div>
+//         <div>
+//           <div className="h-4 w-full bg-gray-300 mb-2" />
+//           <div className="h-4 w-full bg-gray-300 mb-2" />
+//           <div className="h-4 w-3/4 bg-gray-300" />
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
 
-//DYNAMIC METADATA FOR EACH ARTICLE
-export async function generateMetadata() {
-  //fetch the article here again. fetch requests is duplicated and executed once only. No effect on performances
-  return {
-    title: article.title,
-    description: article.body,
-    // openGraph: {
-    //   images: [
-    //     {
-    //       url: Post.imageurl, //samples imageurl
-    //     },
-    //   ],
-    // },
-  };
-}
+"use client";
+import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation"; // Import useSearchParams from next/navigation
 
-//Fetch post data from here
-async function getArticle(id) {
-  const res = await fetch(`http://localhost:4000/articles` + id, {
-    next: {
-      revalidate: 300, //number of seconds to refresh where 0 means opt out of caching
-    },
-  });
+// Function to fetch article data from local files
+const fetchArticle = async (id) => {
+  try {
+    const article = await import(`../../lib/article/${id}.json`);
+    return article;
+  } catch (error) {
+    console.error("Failed to load article:", error);
+    return null;
+  }
+};
 
-  return res.json();
-}
+export default function ArticlePage() {
+  const [article, setArticle] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const searchParams = useSearchParams(); // Get search params
 
-//The post function takes in an Id as a param, it is async to allow code above fetch data
-export default async function Post({ params }) {
-  const article = await getArticle(params.id);
+  // Use the article ID from the search parameters
+  const id = searchParams.get("id"); // Extract the article ID from the search params
+
+  useEffect(() => {
+    const loadArticle = async () => {
+      if (id) {
+        // Ensure the ID is available before fetching
+        try {
+          const data = await fetchArticle(id);
+          setArticle(data);
+        } catch (error) {
+          console.error("Failed to fetch article:", error);
+        } finally {
+          setLoading(false);
+        }
+      }
+    };
+
+    loadArticle();
+  }, [id]); // Depend on the article ID
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (!article) {
+    return <div className="text-center py-10">Article not found</div>;
+  }
+
   return (
-    <main>
-      <div>
-        <p>{id}</p>
+    <div className="container mx-auto py-8 px-4 max-w-4xl">
+      <div className="mb-8 p-6 bg-white shadow rounded">
+        <div className="mb-4">
+          <h2 className="text-2xl font-bold mb-2">{article.title}</h2>
+          <p>
+            By {article.authors.join(", ")} | Published on{" "}
+            {article.publishedDate}
+          </p>
+        </div>
+        <div>
+          <h2 className="text-xl font-semibold mb-2">Abstract</h2>
+          <p className="mb-4">{article.abstract}</p>
+          <div className="h-[300px] overflow-y-auto rounded-md border p-4">
+            <h2 className="text-xl font-semibold mb-2">Content</h2>
+            <p>{article.content}</p>
+          </div>
+        </div>
       </div>
-    </main>
+    </div>
   );
 }

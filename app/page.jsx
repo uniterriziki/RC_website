@@ -1,11 +1,11 @@
-// THIS WILL BE THE HOMEPAGE OF THE APP
 import "tailwindcss/tailwind.css";
 import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="bg-slate-500">
+    <main className="">
       <section>
+        {/* Welcome Section */}
         <section
           className=" bg-gradient-to-r h-20 text-4xl text-center decoration-8 my-10 py-6 font-mono italic text-white"
           style={{
@@ -14,16 +14,42 @@ export default function Home() {
         >
           WELCOME TO RESEARCH CLUB UoN
         </section>
-        <section className="sm:hidden">
-          <div className="">
-            Learn more about
-            <div className="text-green-400">us</div>
-            <Link href="/about" legacyBehavior>
-              <a className="text-un">here</a>
-            </Link>
-          </div>
-          <div>
-            <img src="/." alt="" />
+
+        {/* Who We Are Section */}
+        <section className="bg-slate-400 py-10 text-center">
+          <h2 className="text-3xl font-semibold mb-4">Who We Are</h2>
+          <p className="text-black px-5">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+        </section>
+
+        {/* Our Mission Section */}
+        <section className="bg-slate-300 py-10 text-center">
+          <h2 className="text-3xl font-semibold mb-4">Our Mission</h2>
+          <p className="text-black px-5">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+        </section>
+
+        {/* Our Vision Section */}
+        <section className="bg-slate-200 py-10 text-center">
+          <h2 className="text-3xl font-semibold mb-4">Our Vision</h2>
+          <p className="text-black px-5">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+        </section>
+
+        {/* Gallery Section */}
+        <section className="container mx-auto py-10">
+          <h2 className="text-center text-3xl font-semibold mb-6">Gallery</h2>
+          <div className="grid grid-cols-2 gap-5 border-gray-500 border p-5">
+            {/* Images and descriptions */}
+            {[...Array(5)].map((_, i) => (
+              <div key={i} className="border p-3">
+                <img src={`/image${i + 1}.jpg`} alt={`Gallery image ${i + 1}`} className="w-full h-48 object-cover" />
+                <p className="mt-2 text-center">Description for image {i + 1}</p>
+              </div>
+            ))}
           </div>
         </section>
       </section>

@@ -1,5 +1,6 @@
 import "tailwindcss/tailwind.css";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -49,8 +50,8 @@ export default function Home() {
             {/* Images and descriptions */}
             {[...Array(5)].map((_, i) => (
               <div key={i} className="border p-3">
-                <img
-                  src={`/image${i + 1}.jpg`}
+                <Image
+                  src={`/website_pic${i + 1}.jpeg`}
                   alt={`Gallery image ${i + 1}`}
                   className="w-full h-48 object-cover"
                 />

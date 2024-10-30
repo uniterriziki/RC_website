@@ -7,7 +7,7 @@ export default function Home() {
       <section>
         {/* Welcome Section */}
         <section
-          className=" bg-gradient-to-r h-20 text-4xl text-center decoration-8 my-10 py-6 font-mono italic text-white"
+          className="bg-gradient-to-r h-26 text-4xl text-center decoration-8 mb-10 py-6 font-mono italic text-white"
           style={{
             background: "linear-gradient(to right, #2a338a, #843b81)",
           }}
@@ -16,10 +16,11 @@ export default function Home() {
         </section>
 
         {/* Who We Are Section */}
-        <section className="bg-slate-400 py-10 text-center">
+        <section className="bg-slate-400 py-4 text-center">
           <h2 className="text-3xl font-semibold mb-4">Who We Are</h2>
           <p className="text-black px-5">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
         </section>
 
@@ -27,7 +28,8 @@ export default function Home() {
         <section className="bg-slate-300 py-10 text-center">
           <h2 className="text-3xl font-semibold mb-4">Our Mission</h2>
           <p className="text-black px-5">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
         </section>
 
@@ -35,7 +37,8 @@ export default function Home() {
         <section className="bg-slate-200 py-10 text-center">
           <h2 className="text-3xl font-semibold mb-4">Our Vision</h2>
           <p className="text-black px-5">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
         </section>
 
@@ -46,8 +49,14 @@ export default function Home() {
             {/* Images and descriptions */}
             {[...Array(5)].map((_, i) => (
               <div key={i} className="border p-3">
-                <img src={`/image${i + 1}.jpg`} alt={`Gallery image ${i + 1}`} className="w-full h-48 object-cover" />
-                <p className="mt-2 text-center">Description for image {i + 1}</p>
+                <img
+                  src={`/image${i + 1}.jpg`}
+                  alt={`Gallery image ${i + 1}`}
+                  className="w-full h-48 object-cover"
+                />
+                <p className="mt-2 text-center">
+                  Description for image {i + 1}
+                </p>
               </div>
             ))}
           </div>

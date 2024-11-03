@@ -7,10 +7,10 @@ import ArticleCard from "../../components/ArticleCard";
 export default function Page() {
   const router = useRouter();
   const articles = [
-    { ...article1, imageSrc: "/room 1.jpg" },
-    { ...article2, imageSrc: "/room 2.jpg" },
-    { ...article3, imageSrc: "/room 2.jpg" },
-    { ...article4, imageSrc: "/room 2.jpg" },
+    { ...article1, imageSrc: "/ARTICLE 1 picture.jpg" },
+    { ...article2, imageSrc: "/ARTICLE 2 picture.jpg" },
+    { ...article3, imageSrc: "/ARTICLE 3 picture.jpg" },
+    { ...article4, imageSrc: "/ARTICLE 4 picture.jpg" },
     // Continue adding more if needed
   ];
 

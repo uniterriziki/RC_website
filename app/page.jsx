@@ -48,11 +48,13 @@ export default function Home() {
           <h2 className="text-center text-3xl font-semibold mb-6">Gallery</h2>
           <div className="grid grid-cols-2 gap-5 border-gray-500 border p-5">
             {/* Images and descriptions */}
-            {[...Array(5)].map((_, i) => (
+            {[...Array(4)].map((_, i) => (
               <div key={i} className="border p-3">
                 <Image
                   src={`/website_pic${i + 1}.jpeg`}
                   alt={`Gallery image ${i + 1}`}
+                  width={400}
+                  height={400}
                   className="w-full h-48 object-cover"
                 />
                 <p className="mt-2 text-center">

@@ -5,17 +5,15 @@ import Link from "next/link";
 const Navbar = async () => {
   return (
     <nav className="bg-primary-dark h-20 md:flex md:items-end md:justify-between">
-      <div className="h-full mt-2 ml-4">
-        <Link href="/">
-          <Image
-            src={"/black logo.jpeg"}
-            height={300}
-            width={90}
-            alt="Medical Club Logo"
-            className="cursor-pointer"
-          />
-        </Link>
-      </div>
+      <Link href="/">
+        <Image
+          src={"/black logo.jpeg"}
+          height={600}
+          width={200}
+          alt="Medical Club Logo"
+          className="cursor-pointer ml-4 mb-6"
+        />
+      </Link>
 
       <div className="justify-between gap-4 px-20 mb-6">
         <ul className="md:flex hidden text-sm gap-40 justify-end">

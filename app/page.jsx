@@ -8,12 +8,25 @@ export default function Home() {
       <section>
         {/* Welcome Section */}
         <section
-          className="bg-gradient-to-r h-26 text-4xl text-center decoration-8 mb-10 py-6 font-mono italic text-white"
+          className="bg-gradient-to-r h-84   decoration-8  py-18  "
           style={{
             background: "linear-gradient(to right, #2a338a, #843b81)",
           }}
         >
-          WELCOME TO RESEARCH CLUB UoN
+          <div className="relative text-center">
+            <Image
+              src="/homepagebg.jpeg"
+              alt="microscope"
+              width={400}
+              height={600}
+              className="w-full opacity-25"
+            />
+            <div className="w-full absolute top-[250px] text-center">
+              <p className="text-6xl font-bold text-white font-mono italic text-center">
+                WELCOME TO RESEARCH CLUB UoN
+              </p>
+            </div>
+          </div>
         </section>
 
         {/* Who We Are Section */}
@@ -44,7 +57,7 @@ export default function Home() {
         </section>
 
         {/* Gallery Section */}
-        <section className="container mx-auto py-10">
+        <section className="container mx-auto py-4">
           <h2 className="text-center text-3xl font-semibold mb-6">Gallery</h2>
           <div className="grid grid-cols-2 gap-5 border-gray-500 border p-5">
             {/* Images and descriptions */}

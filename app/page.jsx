@@ -8,7 +8,7 @@ export default function Home() {
       <section>
         {/* Welcome Section */}
         <section
-          className="bg-gradient-to-r h-84   decoration-8  py-18  "
+          className="bg-gradient-to-r h-84 decoration-8"
           style={{
             background: "linear-gradient(to right, #2a338a, #843b81)",
           }}
@@ -18,7 +18,7 @@ export default function Home() {
               src="/homepagebg.jpeg"
               alt="microscope"
               width={400}
-              height={600}
+              height={500}
               className="w-full opacity-25"
             />
             <div className="w-full absolute top-[250px] text-center">

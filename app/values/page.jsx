@@ -152,9 +152,9 @@ export default function Values() {
                 </div>
                 <div>
                   <p className="text-primary-dark">
-                    To be the leading force in shaping a connected world where
-                    technology enhances human potential and creates sustainable
-                    value for society.
+                    To create a vibrant community of student researchers who
+                    advance medical knowledge and contribute meaningfully to
+                    healthcare innovation on both local and global scales.
                   </p>
                 </div>
               </div>

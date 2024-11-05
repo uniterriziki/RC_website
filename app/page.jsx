@@ -33,8 +33,11 @@ export default function Home() {
         <section className="bg-slate-400 py-4 text-center">
           <h2 className="text-3xl font-semibold mb-4">Who We Are</h2>
           <p className="text-black px-5">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            The Research Club of the University of Nairobi (UoNRC) is a
+            student-led organization dedicated to building a community of
+            aspiring researchers. We connect students with medical
+            professionals, fostering curiosity and practical skills to bridge
+            classroom learning with real-world research.
           </p>
         </section>
 
@@ -42,8 +45,11 @@ export default function Home() {
         <section className="bg-slate-300 py-10 text-center">
           <h2 className="text-3xl font-semibold mb-4">Our Mission</h2>
           <p className="text-black px-5">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Our mission is to empower students with essential research skills,
+            ethical foundations, and mentorship opportunities. Through hands-on
+            learning and collaboration, we prepare members to conduct, present,
+            and publish impactful research, shaping the future of medical
+            science.
           </p>
         </section>
 
@@ -51,8 +57,9 @@ export default function Home() {
         <section className="bg-slate-200 py-10 text-center">
           <h2 className="text-3xl font-semibold mb-4">Our Vision</h2>
           <p className="text-black px-5">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            To create a vibrant community of student researchers who advance
+            medical knowledge and contribute meaningfully to healthcare
+            innovation on both local and global scales.
           </p>
         </section>
 

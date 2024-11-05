@@ -50,7 +50,6 @@
 
 // export default page;
 
-
 import { socials } from "../../lib/constants";
 import React from "react";
 
@@ -62,17 +61,17 @@ const page = () => {
           {/* contact info div */}
           <div className="flex flex-col space-y-8 justify-between">
             <div>
-              <h1 className="font-bold text-4xl tracking-wide text-primary-dark">Contact Us</h1>
+              <h1 className="font-bold text-4xl tracking-wide text-primary-dark">
+                Contact Us
+              </h1>
               <p className="pt-2 text-primary text-sm">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s.
+                Rajiv Yusuf, Club Secretary
               </p>
             </div>
             <div className="flex flex-col space-y-6">
               <div className="inline-flex space-x-2 items-center text-primary-dark">
                 {/* insert call icon here */}
-                <span> +(254)-712-345-678</span>
+                <span> (+254)-712-688-726</span>
               </div>
             </div>
             <div>

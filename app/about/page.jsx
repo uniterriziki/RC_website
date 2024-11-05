@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export const metadata = {
   title: "About", //title: {absolute: "sth sth sth here"}
@@ -25,9 +26,15 @@ const About = () => {
               <br /> interaction between researchers and professionals in the
               medical field.
             </p>
-            <button className="lg:ml-12 text-sm bg-secondary text-white hover:bg-secondary-dark">
+            {/* <button className="lg:ml-12 text-sm bg-secondary text-white hover:bg-secondary-dark">
               Learn More
-            </button>
+            </button> */}
+            <Link
+              href="/leaders"
+              className="lg:ml-12 text-sm bg-secondary text-white hover:bg-secondary-dark px-4 py-2 font-medium rounded-md"
+            >
+              See More
+            </Link>
           </div>
         </div>
       </section>

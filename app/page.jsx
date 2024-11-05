@@ -13,7 +13,7 @@ export default function Home() {
             background: "linear-gradient(to right, #2a338a, #843b81)",
           }}
         >
-          <div className="relative text-center">
+          <div className="text-center">
             <Image
               src="/homepagebg.jpeg"
               alt="microscope"
@@ -21,7 +21,7 @@ export default function Home() {
               height={500}
               className="w-full opacity-25"
             />
-            <div className="w-full absolute top-[250px] text-center">
+            <div className="w-full absolute top-[400px] text-center">
               <p className="text-6xl font-bold text-white font-mono italic text-center">
                 WELCOME TO RESEARCH CLUB UoN
               </p>
@@ -54,7 +54,7 @@ export default function Home() {
         </section>
 
         {/* Our Vision Section */}
-        <section className="bg-slate-200 py-10 text-center">
+        <section className="bg-slate-400 py-10 text-center">
           <h2 className="text-3xl font-semibold mb-4">Our Vision</h2>
           <p className="text-black px-5">
             To create a vibrant community of student researchers who advance
@@ -65,20 +65,43 @@ export default function Home() {
 
         {/* Gallery Section */}
         <section className="container mx-auto py-4">
-          <h2 className="text-center text-3xl font-semibold mb-6">Gallery</h2>
+          <h2 className="text-center text-3xl font-semibold mb-6 text-secondary-dark">
+            Gallery
+          </h2>
           <div className="grid grid-cols-2 gap-5 border-gray-500 border p-5">
-            {/* Images and descriptions */}
-            {[...Array(4)].map((_, i) => (
-              <div key={i} className="border p-3">
+            {/* Array of images and descriptions */}
+            {[
+              {
+                src: "/website_pic1.jpeg",
+                description:
+                  "Miheso Lemashon, research club president, awards students for excelling in research at the annual Kenyatta University Research Club conference.",
+              },
+              {
+                src: "/website_pic2.jpeg",
+                description:
+                  "Leaders and members of the UoN research club, taken during the annual Kenyatta University research club conference.",
+              },
+              {
+                src: "/website_pic3.jpeg",
+                description:
+                  "A bright field microscope, one of the inventions that brought significant development in the research and understanding of microbiology",
+              },
+              {
+                src: "/website_pic4.jpeg",
+                description:
+                  "Our scientific director, Maryann Waithaka, uses a bright field microscope to conduct microbiological research.",
+              },
+            ].map((item, i) => (
+              <div key={i} className="ml-4 p-3 items-center justify-center ">
                 <Image
-                  src={`/website_pic${i + 1}.jpeg`}
+                  src={item.src}
                   alt={`Gallery image ${i + 1}`}
-                  width={400}
-                  height={400}
-                  className="w-full h-48 object-cover"
+                  width={500}
+                  height={500}
+                  className="brightness-85 hover:brightness-125 hover:cursor-pointer hover:scale-105 shadow-lg rounded-xl hover:shadow-slate-600 "
                 />
-                <p className="mt-2 text-center">
-                  Description for image {i + 1}
+                <p className="mt-2 text-center text-s text-primary-light ">
+                  {item.description}
                 </p>
               </div>
             ))}
